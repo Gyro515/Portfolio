@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6">
-      <h1 className="text-5xl font-bold mb-4">Hey, I'm Justin Sage 👋</h1>
+      <h1 className="text-5xl font-bold mb-4">Hey, I&apos;m Justin Sage 👋</h1>
       <p className="text-xl text-center max-w-xl mb-6">
         Developer crafting clean, fast, and modern web apps.
       </p>
