@@ -21,9 +21,9 @@ export default function Home() {
         </p>
 
         <div className="flex space-x-4">
-          <a href="https://github.com/yourusername" className="text-blue-500 hover:underline">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" className="text-blue-500 hover:underline">LinkedIn</a>
-          <a href="mailto:you@example.com" className="text-blue-500 hover:underline">Email</a>
+          <a href="https://github.com/gyro515" className="text-blue-500 hover:underline">GitHub</a>
+          <a href="https://linkedin.com/in/justin-briones09" className="text-blue-500 hover:underline">LinkedIn</a>
+          <a href="mailto:jusagebriones@yahoo.com" className="text-blue-500 hover:underline">Email</a>
         </div>
       </main>
 
