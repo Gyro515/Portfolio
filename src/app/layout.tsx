@@ -1,5 +1,6 @@
 import './globals.css';
-import { Analytics } from '@vercel/analytics/react'; // <-- Add this
+import { Analytics } from '@vercel/analytics/react'; // Vercel Analytics
+import Header from './section/Header'
 
 export const metadata = {
   title: 'Justin Sage Portfolio',
@@ -14,8 +15,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+
+        {/* HEADER */}
+        <Header />
         {children}
-        <Analytics /> {/* <-- Add this inside <body> */}
+        
+        {/* FOOTER */}
+        <footer></footer>
+
+        <Analytics />
       </body>
     </html>
   );

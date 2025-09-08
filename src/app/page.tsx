@@ -1,36 +1,60 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail } from 'lucide-react';
+
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <header className="bg-white shadow-md w-full py-4 px-6">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-semibold">Justin Sage</h1>
-          <nav className="space-x-4">
-            <a href="#projects" className="text-gray-700 hover:text-black">Projects</a>
-            <a href="#about" className="text-gray-700 hover:text-black">About</a>
-            <a href="#contact" className="text-gray-700 hover:text-black">Contact</a>
-          </nav>
-        </div>
-      </header>
+        <main className="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-white">
 
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col items-center justify-center p-6">
-        <h1 className="text-5xl font-bold mb-4">Hey, I&apos;m Justin Sage 👋</h1>
-        <p className="text-xl text-center max-w-xl mb-6">
-          Developer crafting clean, fast, and modern web 
-        </p>
+          {/* MAIN CONTENT */}
+          <section
+            id="home"
+            className="min-h-screen flex flex-col justify-center items-center px-4 text-center"
+          >
+            <motion.h1
+              className="text-black text-5xl font-bold mb-4"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Hey, I'm Justin Sage
+            </motion.h1>
 
-        <div className="flex space-x-4">
-          <a href="https://github.com/gyro515" className="text-blue-500 hover:underline">GitHub</a>
-          <a href="https://linkedin.com/in/justin-briones09" className="text-blue-500 hover:underline">LinkedIn</a>
-          <a href="mailto:jusagebriones@yahoo.com" className="text-blue-500 hover:underline">Email</a>
-        </div>
-      </main>
+            <motion.p
+              className="text-xl text-gray-600 max-w-xl mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Web developer crafting clean, fast, and modern websites with a focus on user experience.
+            </motion.p>
+          </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-100 py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Justin Sage • Built with Next.js + Tailwind CSS
-      </footer>
-    </div>
+          <motion.div
+            className="flex text-black gap-6 mb-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <a href="https://github.com/gyro515" target="_blank">
+              <Github className="h-6 w-6 hover:text-black transition" />
+            </a>
+            <a href="https://linkedin.com/in/justin-briones09" target="_blank">
+              <Linkedin className="h-6 w-6 hover:text-blue-600 transition" />
+            </a>
+            <a href="mailto:jusagebriones@yahoo.com">
+              <Mail className="h-6 w-6 hover:text-red-500 transition" />
+            </a>
+          </motion.div>
+
+          <a
+            href="/resume.pdf"
+            className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition"
+            download
+          >
+            Download Resume
+          </a>
+        </main>
   );
 }
