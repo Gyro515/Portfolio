@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p>{"Hey, I'm Justin Sage"}</p>
+              <p>Hey, I&apos;m Justin Sage</p>
             </motion.h1>
 
             <motion.p
