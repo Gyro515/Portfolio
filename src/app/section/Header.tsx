@@ -19,10 +19,10 @@ export default function Header() {
           <h1 className=" text-xl font-bold">JSB</h1>
 
           <nav className="flex flex-wrap gap-10 text-lg">
-            <a onClick={() => scrollToSection('home')} className="hover:underline cursor-pointer">Home</a>
-            <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About</a>
+            <a onClick={() => scrollToSection('technologies')} className="hover:underline cursor-pointer">Technologies</a>
             <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">Projects</a>
-            <a onClick={() => scrollToSection('contact')} className="hover:underline cursor-pointer">Contact</a>
+            <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About</a>
+            <a onClick={() => scrollToSection('connect')} className="hover:underline cursor-pointer">Connect</a>
           </nav>
         </div>
 

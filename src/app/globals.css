@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-black;
+  @apply bg-white text-gray-900;
+}
+
+.dark body{
+  @apply bg-gray-900 text-white;
 }
 
 html {
