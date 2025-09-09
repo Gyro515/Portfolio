@@ -15,19 +15,19 @@ export default function Header() {
       <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center p-4">
 
         {/* Logo & Navigation */}
-        <div className="flex items-center gap-12">
-          <h1 className=" text-xl font-bold">JSB</h1>
+        <div className="flex items-center gap-10">
+          <img src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection('home')} className="brightness-50 cursor-pointer hover:scale-110 transition-transform"/>
 
           <nav className="flex flex-wrap gap-10 text-lg">
             <a onClick={() => scrollToSection('technologies')} className="hover:underline cursor-pointer">Technologies</a>
-            <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">Projects</a>
-            <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About</a>
-            <a onClick={() => scrollToSection('connect')} className="hover:underline cursor-pointer">Connect</a>
+            <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">My Projects</a>
+            <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About Me</a>
+            <a onClick={() => scrollToSection('connect')} className="hover:underline cursor-pointer">Get In Touch</a>
           </nav>
         </div>
 
         {/* Social Media */}
-        <div className="flex justify-end gap-4">
+        <div className="flex justify-end gap-10">
           <a href="https://github.com/gyro515" target="_blank"><Github className="h-6 w-6 hover:text-green-400 transition" /></a>
           <a href="https://linkedin.com/in/justin-briones09" target="_blank"><Linkedin className="h-6 w-6 hover:text-blue-600 transition" /></a>
           <a href="mailto:jusagebriones@yahoo.com"><Mail className="h-6 w-6 hover:text-red-500 transition" /></a>
