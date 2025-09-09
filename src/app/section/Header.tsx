@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 bg-white shadow-md border-b border-gray-200 z-50">
-      <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center p-4">
+      <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center pl-5 pt-4 pr-5 pb-4">
 
         {/* Logo & Navigation */}
         <div className="flex items-center gap-10">
@@ -28,9 +28,9 @@ export default function Header() {
 
         {/* Social Media */}
         <div className="flex justify-end gap-10">
-          <a href="https://github.com/gyro515" target="_blank"><Github className="h-6 w-6 hover:text-green-400 transition" /></a>
-          <a href="https://linkedin.com/in/justin-briones09" target="_blank"><Linkedin className="h-6 w-6 hover:text-blue-600 transition" /></a>
-          <a href="mailto:jusagebriones@yahoo.com"><Mail className="h-6 w-6 hover:text-red-500 transition" /></a>
+          <a href="https://github.com/gyro515" target="_blank"><Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition" /></a>
+          <a href="https://linkedin.com/in/justin-briones09" target="_blank"><Linkedin className="h-6 w-6 hover:text-blue-600 hover:scale-110 transition" /></a>
+          <a href="mailto:jusagebriones@yahoo.com"><Mail className="h-6 w-6 hover:text-red-500 hover:scale-110 transition" /></a>
         </div>
 
       </div>
