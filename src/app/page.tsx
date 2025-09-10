@@ -49,12 +49,12 @@ export default function Home() {
           </section>
 
            {/* About Section */}
-            <section id="about" className="min-h-screen flex flex-wrap justify-evenly items-center w-screen p-10">
-              <div className="backdrop-blur-sm rounded-3xl bg-gradient-to-br from-white via-white- to-gray-950 shadow-lg p-4">
-                <h1 className="text-9xl font-extrabold italic uppercase">About Me</h1>
+              <div className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white via-white- to-gray-950 shadow-lg">
+                <h1 className="text-8xl font-extrabold italic uppercase text-black">About Me</h1>
+                <h2>Hello</h2>
               </div>
 
-              <div className="pt-20 flex flex-col gap-4 text-left"> 
+              <div className="pt-2 pr-6 flex flex-col gap-4 text-left"> 
                 <TimelineComponent
                 classification="Education"
                 role="BSc. Honours in Applied Computer Science with Statistics minor"
