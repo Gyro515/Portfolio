@@ -49,6 +49,7 @@ export default function Home() {
           </section>
 
            {/* About Section */}
+            <section id="about" className="min-h-screen flex flex-col md:flex-row items-stretch justify-center gap-10 p-32">
               <div className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white via-white- to-gray-950 shadow-lg">
                 <h1 className="text-8xl font-extrabold italic uppercase text-black">About Me</h1>
                 <h2>Hello</h2>
