@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GraduationCap, GraduationCapIcon } from 'lucide-react';
 
 function TimelineComponent({
   classification,
@@ -50,8 +49,8 @@ export default function Home() {
 
            {/* About Section */}
             <section id="about" className="min-h-screen flex flex-col md:flex-row items-stretch justify-center gap-10 p-32">
-              <div className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white via-white- to-gray-950 shadow-lg">
-                <h1 className="text-8xl font-extrabold italic uppercase text-black">About Me</h1>
+              <div className="flex flex-col rounded-3xl bg-gradient-to-br from-gray-100 to-gray-950 shadow-lg p-10">
+                <h1 className="text-7xl font-extrabold italic uppercase text-black">About Me</h1>
                 <h2>Hello</h2>
               </div>
 
