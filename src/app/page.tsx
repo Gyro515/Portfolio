@@ -59,7 +59,7 @@ export default function Home() {
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-800">
                 I recently earned my BSc Honours in Applied Computer Science with a Statistics minor, 
                 where I developed a strong foundation across full-stack development, data analytics, 
-                and system security. I'm driven by a desire to solve problems and create solutions that
+                and system security. I&apos;m driven by a desire to solve problems and create solutions that
                 bring meaningful impact. My goal is to continue growing my skills while contributing to
                 projects that help people and organizations work smarter and make data-driven decisions.</h2>
             </div>
