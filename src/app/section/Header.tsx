@@ -11,8 +11,8 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 inset-x-0 bg-white shadow-md border-b border-gray-200 z-50">
-      <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center pl-5 pt-4 pr-5 pb-4">
+    <header className="fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
+      <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center px-5 py-4">
 
         {/* Logo & Navigation */}
         <div className="flex items-center gap-10">
@@ -22,7 +22,6 @@ export default function Header() {
             <a onClick={() => scrollToSection('technologies')} className="hover:underline cursor-pointer">Technologies</a>
             <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">My Projects</a>
             <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About Me</a>
-            <a onClick={() => scrollToSection('connect')} className="hover:underline cursor-pointer">Get In Touch</a>
           </nav>
         </div>
 
