@@ -1,6 +1,47 @@
 'use client';
 
+import { projectsdata } from "./data/projectdata";
 import { motion } from 'framer-motion';
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+
+function ProjectCardComponent({
+  name,
+  image,
+  description,
+  pn,
+  tech = [],
+}:{
+  name: string;
+  image: string | StaticImageData;
+  description: string;
+  pn: string;
+  tech?: string[];
+}){
+  return(
+    <article className="order-2 lg:order-1 relative overflow-hidden w-80 rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
+      {/* Image */}
+      <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
+        <Image src={image} alt={name} fill className="object-fill"/>
+      </div>
+
+      {/* Text */}
+      <div className="p-5 flex flex-col">
+        <h1 className="text-lg font-semibold text-gray-900 leading-snug">{name}</h1>
+        <h3 className="pb-3 mt-1 text-md text-gray-600 break-words">{description}</h3>
+        
+        <div className="flex flex-wrap gap-2 items-center">
+          {tech.map((t) => (
+            <span key={t}>
+              <h2 className="border-gray-400 border-solid border text-xs px-2 py-1 bg-gray-300 text-gray-700 rounded-full">{t}</h2>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <Link href={`/projects/${pn}`} className="absolute inset-0 focus:outline-none focus-visible:ring-2 focus-variable:ring-black/10 rounded-xl" aria-label={`Open ${name}`}/>
+      </article>
+)}
 
 function TimelineComponent({
   classification,
@@ -12,14 +53,15 @@ function TimelineComponent({
   role: string;
   meta: string;
   bullets: string[];
-}){return(
-  <article className="pl-10 border-l-2 border-gray-900">
-    <h1 className="text-2xl font-extrabold italic uppercase text-gray-900">{classification}</h1>
-    <h2 className="text-xl font-semibold text-gray-900">{role}</h2>
-    <h3 className="font-medium tracking-wide text-gray-800">{meta}</h3>
-    <ul className="text-gray-700 list-disc pl-4">{bullets.map((i, j)=> (<li key={j}>{i}</li>))}
-    </ul>
-  </article>
+}){
+  return(
+    <article className="pl-10 border-l-2 border-gray-900">
+      <h1 className="text-2xl font-extrabold italic uppercase text-gray-900">{classification}</h1>
+      <h2 className="text-xl font-semibold text-gray-900">{role}</h2>
+      <h3 className="font-medium tracking-wide text-gray-800">{meta}</h3>
+      <ul className="text-gray-700 list-disc pl-4">{bullets.map((i, j)=> (<li key={j}>{i}</li>))}
+      </ul>
+    </article>
 )}
 
 export default function Home() {
@@ -47,13 +89,34 @@ export default function Home() {
             </motion.h2>
           </section>
 
+          {/* Technologies */}
+          <section id="technologies" className="min-h-screen"></section>
+
           {/* Project Section */}
-          <section id="projects" className="min-h-screen">
-             
+          <section id="projects" className="min-h-screen flex flex-col lg:flex-row items-center lg:gap-16 mb-[-125] p-10">
+            <div className="order-2 lg:order-1 flex flex-row flex-wrap justify-center gap-10 md:pt-16 lg:pt-32 md:pb-20 sm:pb-20">
+              {projectsdata.map((p) => {
+                const pn = p.name.toLowerCase().replace(/\s+/g, "_")
+                return (
+                  <ProjectCardComponent
+                  key={p.name}
+                  name={p.name}
+                  image={p.image}
+                  description={p.description}
+                  pn={pn}
+                  tech={p.tech}
+                  />
+                );
+              })}
+            </div>
+            <div className="order-1 lg:order-2">
+              <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">My</h1>
+              <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">Projects</h1>
+            </div>
           </section>
 
           {/* About Section */}
-          <section id="about" className="min-h-screen flex flex-col md:flex-row items-stretch gap-28 p-32 mb-[-75]">
+          <section id="about" className="min-h-screen flex flex-col md:flex-row items-stretch gap-28 p-32">
             <div className="flex flex-col justify-center md:col-span-1 max-w-lg">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">About Me</h1>
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-800">
