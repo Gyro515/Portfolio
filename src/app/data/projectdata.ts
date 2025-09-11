@@ -12,5 +12,6 @@ export const projectsdata = [
         name: "Moneywise Financial",
         description: "Security-focused architecture case study for a hypothetical banking platform.",
         image: mf,
+        tech: []
     },
 ];
