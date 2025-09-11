@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"; // Vercel Analytics
-import Header from "./section/header"
-import Footer from "./section/footer"
+import Header from "./section/Header"
+import Footer from "./section/Footer"
 
 
 export const metadata = {
