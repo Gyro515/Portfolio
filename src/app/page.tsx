@@ -82,27 +82,6 @@ function ProjectCardComponent({
       </article>
 )}
 
-function TimelineComponent({
-  classification,
-  role,
-  meta,
-  bullets,
-}:{
-  classification: string;
-  role: string;
-  meta: string;
-  bullets: string[];
-}){
-  return(
-    <article className="pl-10 border-l-2 border-gray-900">
-      <h1 className="text-2xl font-extrabold italic uppercase text-gray-900">{classification}</h1>
-      <h2 className="text-xl font-semibold text-gray-900">{role}</h2>
-      <h3 className="font-medium tracking-wide text-gray-800">{meta}</h3>
-      <ul className="text-gray-700 list-disc pl-4">{bullets.map((i, j)=> (<li key={j}>{i}</li>))}
-      </ul>
-    </article>
-)}
-
 export default function Home() {
   return (
         <main className="flex flex-col items-center text-center w-[100vw]">
