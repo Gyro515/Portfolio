@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky md:fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
+    <header className="w-full sticky md:fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
       <div className="mx-auto max-w-screen-xl flex items-center justify-between px-5 py-4">
 
         {/* Logo */}
