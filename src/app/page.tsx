@@ -1,9 +1,48 @@
 'use client';
 
-import { projectsdata } from "./data/projectdata";
+import { useEffect } from "react";
+import { projectdata } from "./data/projectdata";
 import { motion } from 'framer-motion';
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
+
+function ScrollLoad(){
+  useEffect(() => {
+    const id = sessionStorage.getItem("scroll-target");
+    if (!id) return;
+    sessionStorage.removeItem("scroll-target");
+
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+}, []);
+
+  return null;
+}
+
+function TechStackComponent({
+  category,
+  tech = [],
+  size = 64,
+}:{
+  category: string;
+  tech?: string[];
+  size?: number;
+}){
+  return(
+    <article className="flex flex-row gap-8 items-center p-2">
+      <div className="font-extrabold text-gray-800">{category}</div>
+      <ul className="ml-auto flex flex-wrap items-center gap-4 justify-end">
+        {tech.map((t, idx) => (
+          <li key={idx}>
+            <Icon icon={t} width={size} height={size} />
+            </li>
+        ))}
+      </ul>
+    </article>
+  )
+}
 
 function ProjectCardComponent({
   name,
@@ -19,7 +58,7 @@ function ProjectCardComponent({
   tech?: string[];
 }){
   return(
-    <article className="order-2 lg:order-1 relative overflow-hidden w-full max-w-80 h-[53vh] rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
+    <article className="order-2 lg:order-1 relative overflow-hidden w-full max-w-80 h-[390]  rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
       {/* Image */}
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
         <Image src={image} alt={name} fill className="object-fill"/>
@@ -66,10 +105,10 @@ function TimelineComponent({
 
 export default function Home() {
   return (
-        <main className="flex flex-col items-center justify-center text-center">
-
+        <main className="flex flex-col items-center text-center">
+          <ScrollLoad/>
           {/* Home Section */}
-          <section id="home" className="min-h-screen flex flex-col justify-center items-center p-10">
+          <section id="home" className="flex flex-col items-center justify-center h-[100vh] p-10">
             <motion.h1
               className="text-black text-5xl font-bold mb-4 tracking-tight"
               initial={{ opacity: 0, y: 100 }}
@@ -90,14 +129,43 @@ export default function Home() {
           </section>
 
           {/* Technologies */}
-          <section id="technologies" className="min-h-screen"></section>
+          <section id="technologies" className="scroll-mt-60 flex flex-col md:flex-row flex-wrap justify-center gap-8 px-16 pt-16 pb-16">
+            <div className="flex flex-col justify-center md:col-span-1 max-w-lg">
+              <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">What <br/> I built with</h1>
+              <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
+                Over the years I&apos;ve worked with cutting-edge technologies, making interfaces easy to use, connecting the pieces behind the scenes and bringing it to life. </h2>
+            </div>
+
+            <div className="pt-1 flex flex-col text-left justify-center pl-10 border-l-2 border-gray-900"> 
+              <TechStackComponent
+              category="Programming:"
+              tech={["devicon:java", "devicon:javascript", "devicon:typescript", "devicon:python", "devicon:r", "devicon:csharp"]}
+              />
+              <TechStackComponent
+              category="Frameworks & Libraries:"
+              tech={["devicon:react", "devicon:nextjs", "devicon:nodejs", "devicon:express"]}
+              />
+              <TechStackComponent
+              category="Database & Cloud:"
+              tech={["devicon:postgresql", "devicon:mysql", "devicon:googlecloud", "devicon:azure"]}
+              />
+              <TechStackComponent
+              category="Analytics & Visualization:"
+              tech={["logos:tableau-icon", "devicon:pandas", "devicon:numpy", "vscode-icons:file-type-excel"]}
+              />
+              <TechStackComponent
+              category="Tools:"
+              tech={["devicon:git", "devicon:github", "devicon:vscode", "devicon:postman", "devicon:figma"]}
+              />
+            </div>
+          </section>
 
           {/* Project Section */}
-          <section id="projects" className="min-h-screen flex flex-col lg:flex-row gap-16 xl:gap-28 items-center pt-16">
-            <div className="order-2 lg:order-none border-2 border-gray-300 bg-gray-200 shadow-2xl rounded-xl p-3">
-              <div className="h-[57.5vh] overflow-y-scroll px-4 pb-6 snap-y snap-mandatory">
+          <section id="projects" className="scroll-mt-36 flex flex-col lg:flex-row items-center gap-16 xl:gap-28 py-16 md:py-28">
+            <div className="order-2 lg:order-none border-2 border-gray-100 bg-gray-100 shadow-2xl rounded-xl p-3">
+              <div className="h-[420px] overflow-y-scroll px-4 pb-6 snap-y snap-mandatory">
                 <div className="grid gap-8 grid-cols-1 xl:grid-cols-2 py-2">
-                  {projectsdata.map((p) => {
+                  {projectdata.map((p) => {
                     const pn = p.name.toLowerCase().replace(/\s+/g, "_")
                     return (
                       <ProjectCardComponent
@@ -119,10 +187,10 @@ export default function Home() {
           </section>
 
           {/* About Section */}
-          <section id="about" className="min-h-screen flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-28 p-32">
+          <section id="about" className="scroll-mt-20 flex flex-col md:flex-row flex-wrap justify-center gap-28 px-32 pt-16 pb-32">
             <div className="flex flex-col justify-center md:col-span-1 max-w-lg">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">About Me</h1>
-              <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-800">
+              <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
                 I recently earned my BSc Honours in Applied Computer Science with a Statistics minor, 
                 where I developed a strong foundation across full-stack development, data analytics, 
                 and system security. I&apos;m driven by a desire to solve problems and create solutions that
@@ -130,7 +198,7 @@ export default function Home() {
                 projects that help people and organizations work smarter and make data-driven decisions.</h2>
             </div>
 
-            <div className="pt-1 flex flex-col gap-4 text-left"> 
+            <div className="pt-1 flex flex-col gap-4 text-left justify-center"> 
               <TimelineComponent
               classification="Education"
               role="BSc. Honours in Applied Computer Science with Statistics minor"

@@ -24,8 +24,8 @@ export default function Footer() {
                     </div>
 
                     {/* Contact Information */}
-                    <div className="leading-relaxed text-gray-700">
-                        <p>Email: <a href="mailto:jusagebriones@yahoo.com" className="hover:underline">jusagebriones@yahoo.com</a></p>
+                    <div className="leading-relaxed text-gray-700 text-right">
+                        <p>Email: <a href="mailto:jusagebriones@yahoo.com" className="hover:underline ">jusagebriones@yahoo.com</a></p>
                         <p>Phone: <a href="tel:+12043966559" className="hover:underline"> +1 (204) 396-6559</a></p>
                     </div>
 

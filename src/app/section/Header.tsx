@@ -1,38 +1,65 @@
 "use client"
-
-import { Github, Linkedin, Mail } from "lucide-react";
+import { useState} from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth"})
+    if (pathname === "/"){
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      sessionStorage.setItem("scroll-target", id);
+      router.push("/", { scroll: false });
     }
-  }
+  };
 
   return (
-    <header className="fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
-      <div className="mx-auto max-w-screen-xl grid grid-cols-2 items-center px-5 py-4">
+    <header className="sticky md:fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
+      <div className="mx-auto max-w-screen-xl flex items-center justify-between px-5 py-4">
 
-        {/* Logo & Navigation */}
-        <div className="flex items-center gap-10">
+        {/* Logo */}
+        <div className="flex items-center gap-4">
           <img src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection('home')} className="brightness-50 cursor-pointer hover:scale-110 transition-transform"/>
-
-          <nav className="flex flex-wrap gap-10 text-lg">
-            <a onClick={() => scrollToSection('technologies')} className="hover:underline cursor-pointer">Technologies</a>
-            <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">My Projects</a>
-            <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About Me</a>
-          </nav>
         </div>
 
+        {/* Desktop Navigation */}
+        <nav className="sticky hidden md:flex gap-10 text-lg">
+          <a onClick={() => scrollToSection('technologies')} className="hover:underline cursor-pointer">Technologies</a>
+          <a onClick={() => scrollToSection('projects')} className="hover:underline cursor-pointer">My Projects</a>
+          <a onClick={() => scrollToSection('about')} className="hover:underline cursor-pointer">About Me</a>
+        </nav>
+
         {/* Social Media */}
-        <div className="flex justify-end gap-10">
+        <div className="hidden md:flex justify-end gap-10">
           <a href="https://github.com/gyro515" target="_blank"><Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition" /></a>
           <a href="https://linkedin.com/in/justin-briones09" target="_blank"><Linkedin className="h-6 w-6 hover:text-blue-600 hover:scale-110 transition" /></a>
           <a href="mailto:jusagebriones@yahoo.com"><Mail className="h-6 w-6 hover:text-red-500 hover:scale-110 transition" /></a>
         </div>
 
+        {/* Mobile */}
+        <button className="md:hidden p-2 rounded hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6"/>}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden shadow-md border-t px-5 py-4 space-y-4">
+          <a onClick={() => scrollToSection('technologies')} className="block hover:underline cursor-pointer">Technologies</a>
+          <a onClick={() => scrollToSection('projects')} className="block hover:underline cursor-pointer">My Projects</a>
+          <a onClick={() => scrollToSection('about')} className="block hover:underline cursor-pointer">About Me</a>
+
+        <div className="flex gap-6 pt-4 border-t">
+          <a href="https://github.com/gyro515" target="_blank"><Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition" /></a>
+          <a href="https://linkedin.com/in/justin-briones09" target="_blank"><Linkedin className="h-6 w-6 hover:text-blue-600 hover:scale-110 transition" /></a>
+          <a href="mailto:jusagebriones@yahoo.com"><Mail className="h-6 w-6 hover:text-red-500 hover:scale-110 transition" /></a>
+        </div>
+        </div>
+      )}
     </header>
   )
 }
