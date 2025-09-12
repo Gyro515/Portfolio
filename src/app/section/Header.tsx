@@ -1,7 +1,9 @@
 "use client"
+
 import { useState} from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +25,7 @@ export default function Header() {
 
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <img src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection('home')} className="brightness-50 cursor-pointer hover:scale-110 transition-transform"/>
+          <Image src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 hover:scale-110 transition-transform"/>
         </div>
 
         {/* Desktop Navigation */}

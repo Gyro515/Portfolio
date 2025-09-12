@@ -1,5 +1,6 @@
 "use cliet"
 
+import Image from "next/image";
 import {TbBrandTypescript, TbBrandNextjs, TbBrandTailwind, TbBrandVercel, TbBrandGithub} from "react-icons/tb";
 
 export default function Footer() {
@@ -10,7 +11,7 @@ export default function Footer() {
 
                     {/* Social Media */}
                     <div>
-                        <img src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 hover:scale-110 transition-transform"/>
+                        <Image src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 hover:scale-110 transition-transform"/>
                         <div className="flex flex-row items-stretch gap-1">
                             <h2 className="text-sm tracking-wide text-gray-600">Powered by</h2>
                             <ul className="text-2xl text-gray-600 flex gap-0">
