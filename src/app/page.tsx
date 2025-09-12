@@ -5,7 +5,6 @@ import { projectdata } from "./data/projectdata";
 import { motion } from 'framer-motion';
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
 
 function ScrollLoad(){
   useEffect(() => {
