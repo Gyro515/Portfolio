@@ -58,7 +58,7 @@ function ProjectCardComponent({
   tech?: string[];
 }){
   return(
-    <article className="order-2 lg:order-1 relative overflow-hidden w-[20rem] h-[24rem] rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
+    <article className="order-2 lg:order-1 relative overflow-hidden w-[330px] h-[400px] rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
       {/* Image */}
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
         <Image src={image} alt={name} fill className="object-fill"/>
@@ -130,7 +130,7 @@ export default function Home() {
 
           {/* Technologies */}
           <section id="technologies" className="flex flex-col md:flex-row flex-wrap justify-center w-full ">
-            <div className="flex flex-col justify-center md:col-span-1 w-[40rem]">
+            <div className="flex flex-col justify-center md:col-span-1">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">What <br/> I built with</h1>
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
                 Over the years I&apos;ve worked with cutting-edge technologies, making interfaces easy to use, connecting the pieces behind the scenes and bringing it to life. </h2>
@@ -188,7 +188,7 @@ export default function Home() {
 
           {/* About Section */}
           <section id="about" className="flex flex-col md:flex-row flex-wrap justify-center w-full">
-            <div className="flex flex-col justify-center md:col-span-1 w-[30rem]">
+            <div className="flex flex-col justify-center md:col-span-1">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">About Me</h1>
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
                 I recently earned my BSc Honours in Applied Computer Science with a Statistics minor, 
