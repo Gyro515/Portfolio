@@ -105,10 +105,10 @@ function TimelineComponent({
 
 export default function Home() {
   return (
-        <main className="flex flex-col items-center text-center">
+        <main className="flex flex-col items-center text-center w-[100vw]">
           <ScrollLoad/>
           {/* Home Section */}
-          <section id="home" className="flex flex-col items-center justify-center h-[100vh] p-10">
+          <section id="home" className="flex flex-col items-center justify-center mx-auto p-10">
             <motion.h1
               className="text-black text-5xl font-bold mb-4 tracking-tight"
               initial={{ opacity: 0, y: 100 }}
@@ -129,7 +129,7 @@ export default function Home() {
           </section>
 
           {/* Technologies */}
-          <section id="technologies" className="scroll-mt-60 flex flex-col md:flex-row flex-wrap justify-center gap-8 px-16 pt-16 pb-16">
+          <section id="technologies" className="scroll-mt-60 flex flex-col md:flex-row flex-wrap justify-center mx-auto gap-8 px-16 pt-16 pb-16">
             <div className="flex flex-col justify-center md:col-span-1 max-w-lg">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">What <br/> I built with</h1>
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
@@ -161,7 +161,7 @@ export default function Home() {
           </section>
 
           {/* Project Section */}
-          <section id="projects" className="scroll-mt-36 flex flex-col lg:flex-row items-center gap-16 xl:gap-28 py-16 md:py-28">
+          <section id="projects" className="scroll-mt-36 flex flex-col lg:flex-row items-center gap-16 xl:gap-28 mx-auto py-16 md:py-28">
             <div className="order-2 lg:order-none border-2 border-gray-100 bg-gray-100 shadow-2xl rounded-xl p-3">
               <div className="h-[420px] overflow-y-scroll px-4 pb-6 snap-y snap-mandatory">
                 <div className="grid gap-8 grid-cols-1 xl:grid-cols-2 py-2">
@@ -187,7 +187,7 @@ export default function Home() {
           </section>
 
           {/* About Section */}
-          <section id="about" className="scroll-mt-20 flex flex-col md:flex-row flex-wrap justify-center gap-28 px-32 pt-16 pb-32">
+          <section id="about" className="scroll-mt-20 flex flex-col md:flex-row flex-wrap justify-center gap-28 mx-auto px-32 pt-16 pb-32">
             <div className="flex flex-col justify-center md:col-span-1 max-w-lg">
               <h1 className="text-7xl font-extrabold italic uppercase text-gray-900">About Me</h1>
               <h2 className="pt-10 text-lg font-semibold leading-relaxed text-gray-600">
