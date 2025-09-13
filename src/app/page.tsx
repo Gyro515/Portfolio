@@ -34,7 +34,7 @@ function TechStackComponent({
       <ul className="flex flex-row w-full justify-end gap-4">
         {tech.map((t, idx) => (
           <li key={idx}>
-            <Icon icon={t} className="size-6 md:size-20"/>
+            <Icon icon={t} className="size-6 md:size-12"/>
             </li>
         ))}
       </ul>
@@ -56,7 +56,7 @@ function ProjectCardComponent({
   tech?: string[];
 }){
   return(
-    <article className="relative overflow-hidden w-[72vw] h-[50vh] md:w-[16vw] md:h-[375px] rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
+    <article className="relative overflow-hidden w-[72vw] h-[48vh] md:w-[16vw] md:h-[42vh] rounded-xl border-gray-200 bg-white shadow-md hover:shadow-xl transition">
       {/* Image */}
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
         <Image src={image} alt={name} fill className="object-fill"/>
@@ -103,10 +103,10 @@ function TimelineComponent({
 
 export default function Home() {
   return (
-        <main className="flex flex-col items-center text-center">
+        <main className="flex flex-col items-center text-center mt-[10vh]">
           <ScrollLoad/>
           {/* Home Section */}
-          <section id="home" className="flex flex-col items-center justify-center h-[60vh] md:h-[100vh] w-full">
+          <section id="home" className="flex flex-col items-center justify-center h-[70vh] md:h-[80vh] w-[100vw]">
             <motion.h1
               className="text-black text-3xl md:text-5xl font-bold mb-4 tracking-tight"
               initial={{ opacity: 0, y: 100 }}
@@ -127,7 +127,7 @@ export default function Home() {
           </section>
 
           {/* Technologies */}
-          <section id="technologies" className="flex flex-col justify-center md:flex-row items-center pt-[40vh] h-[60vh] md:pt-[20vh] md:h-[90vh] w-full gap-3 md:gap-12">
+          <section id="technologies" className="flex flex-col justify-center md:flex-row items-center md:pt-[20vh] h-[100vh] md:h-[90vh] w-[100vw] gap-3 md:gap-12">
             <div className="flex flex-col justify-center w-[90vw] md:w-[30vw]">
               <h1 className="text-3xl md:text-7xl font-extrabold italic uppercase text-gray-900">What I built with</h1>
               <h2 className="pt-4 text-md md:text-lg font-semibold leading-relaxed text-gray-600">
@@ -159,10 +159,12 @@ export default function Home() {
           </section>
 
           {/* Project Section */}
-          <section id="projects" className="flex flex-col md:flex-row items-center justify-center w-full pt-[80vh] md:pt-[20vh] h-[60vh] md:h-[90vh] gap-3 md:gap-12">
-            <div className="order-2 lg:order-none border-2 border-gray-100 bg-gray-100 shadow-2xl rounded-xl p-1 md:p-3">
-              <div className="w-[80vw] md:w-[36vw] h-[55vh] md:h-[50vh] overflow-y-scroll px-4 pb-6 snap-y snap-mandatory">
-                <div className="grid gap-8 grid-cols-1 xl:grid-cols-2 py-2">
+          <section id="projects" className="flex flex-col md:flex-row items-center justify-center md:pt-[20vh] h-[100vh] md:h-[90vh] w-[100vw] gap-8 md:gap-12">
+            <h1 className="text-3xl md:text-7xl font-extrabold italic uppercase text-gray-900">My Projects</h1>
+            
+            <div className="border-2 border-gray-100 bg-gray-100 shadow-2xl rounded-xl px-2 py-6 md:p-1">
+              <div className="w-[80vw] md:w-[36vw] h-[55vh] md:h-[50vh] overflow-y-scroll px-4 py-6 snap-y snap-mandatory">
+                <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
                   {projectdata.map((p) => {
                     const pn = p.name.toLowerCase().replace(/\s+/g, "_")
                     return (
@@ -179,13 +181,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <h1 className="text-3xl md:text-7xl font-extrabold italic uppercase text-gray-900">My Projects</h1>
-            </div>
           </section>
 
           {/* About Section */}
-          <section id="about" className="flex flex-col md:flex-row justify-center w-full pt-[40vh] md:pt-[20vh] md:mb-[40vh] md:h-[90vh] gap-12 px-10">
+          <section id="about" className="flex flex-col md:flex-row justify-center pt-[60vh]  md:pt-[20vh] mb-[30vh] md:h-[90vh] w-[100vw] gap-12 px-10">
             <div className="flex flex-col justify-center md:col-span-1 md:w-[25vw]">
               <h1 className="text-3xl md:text-7xl font-extrabold italic uppercase text-gray-900">About Me</h1>
               <h2 className="pt-4 md:pt-10 text-sm md:text-lg font-semibold leading-relaxed text-gray-600 md:w-[25vw]">

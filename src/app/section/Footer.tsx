@@ -1,31 +1,30 @@
 "use cliet"
 
-import Image from "next/image";
 import {TbBrandTypescript, TbBrandNextjs, TbBrandTailwind, TbBrandVercel, TbBrandGithub} from "react-icons/tb";
 
 export default function Footer() {
     return (
         <footer className="w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] border-t border-gray-200 relative z-50">
             <div className="mx-auto max-w-screen-xl px-5 py-4">
-                <div className="flex flex-col justify-between items-center">
+                <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-1">
 
                     {/* Social Media */}
                     <div>
-                        <Image src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 hover:scale-110 transition-transform"/>
+                        <img src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 transition-transform"/>
                         <div className="flex flex-row items-stretch gap-1">
-                            <h2 className="text-sm tracking-wide text-gray-600">Powered by</h2>
+                            <h2 className="text-sm tracking-wide text-gray-700">Powered by</h2>
                             <ul className="text-2xl text-gray-600 flex gap-0">
-                                <TbBrandNextjs className="hover:scale-110"/>
-                                <TbBrandTypescript className="hover:scale-110"/>
-                                <TbBrandTailwind className="hover:scale-110"/>
-                                <TbBrandVercel className="hover:scale-110"/>
-                                <TbBrandGithub className="hover:scale-110"/>
+                                <TbBrandNextjs/>
+                                <TbBrandTypescript/>
+                                <TbBrandTailwind/>
+                                <TbBrandVercel/>
+                                <TbBrandGithub/>
                             </ul>
                         </div>
                     </div>
 
                     {/* Contact Information */}
-                    <div className="leading-relaxed text-gray-700 text-right">
+                    <div className="leading-relaxed text-gray-700 text-left text-sm md:text-md md:text-right flex flex-col gap-2">
                         <p>Email: <a href="mailto:jusagebriones@yahoo.com" className="hover:underline ">jusagebriones@yahoo.com</a></p>
                         <p>Phone: <a href="tel:+12043966559" className="hover:underline"> +1 (204) 396-6559</a></p>
                     </div>
