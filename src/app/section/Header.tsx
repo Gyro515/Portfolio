@@ -12,7 +12,7 @@ export default function Header() {
 
   const scrollToSection = (id: string) => {
     if (pathname === "/"){
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center"});
     } else {
       sessionStorage.setItem("scroll-target", id);
       router.push("/", { scroll: false });

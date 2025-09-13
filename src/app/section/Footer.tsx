@@ -1,11 +1,11 @@
-"use cliet"
+"use client"
 
 import {TbBrandTypescript, TbBrandNextjs, TbBrandTailwind, TbBrandVercel, TbBrandGithub} from "react-icons/tb";
 
 export default function Footer() {
     return (
         <footer className="w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] border-t border-gray-200 relative z-50">
-            <div className="mx-auto max-w-screen-xl px-5 py-4">
+            <div className="mx-auto max-w-screen-lg px-5 py-4">
                 <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-1">
 
                     {/* Social Media */}
