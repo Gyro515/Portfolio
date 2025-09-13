@@ -25,7 +25,7 @@ export default function Header() {
 
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <Image src="/favicon.ico" alt="Logo" height={48} width={48} className="brightness-50 hover:scale-110 transition-transform"/>
+          <Image src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection('home')} className="brightness-50 hover:scale-110 transition-transform cursor-pointer"/>
         </div>
 
         {/* Desktop Navigation */}
