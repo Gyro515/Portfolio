@@ -20,12 +20,12 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full sticky md:fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
+    <header className="w-full h-[10vh] sticky md:fixed top-0 inset-x-0 bg-white shadow-md border-b z-50">
       <div className="mx-auto max-w-screen-xl flex items-center justify-between px-5 py-4">
 
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <Image src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection('home')} className="brightness-50 hover:scale-110 transition-transform cursor-pointer"/>
+          <Image src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection("home")} className="brightness-50 hover:scale-110 transition-transform cursor-pointer"/>
         </div>
 
         {/* Desktop Navigation */}
