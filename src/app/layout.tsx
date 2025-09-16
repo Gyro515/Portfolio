@@ -5,8 +5,8 @@ import Footer from "./section/Footer"
 
 
 export const metadata = {
-  title: "Justin Sage Portfolio",
-  description: "Personal developer website",
+  title: "JSB - Justin Sage Briones",
+  description: "Portfolio of Justin Sage Briones",
 };
 
 export default function RootLayout({
