@@ -7,124 +7,6 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
-function ScrollLoad(){
-  useEffect(() => {
-    const id = sessionStorage.getItem("scroll-target");
-    if (!id) return;
-    sessionStorage.removeItem("scroll-target");
-
-    requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }, []);
-
-  return null;
-}
-
-function ProjectCardComponent({
-  name,
-  image,
-  description,
-  pn,
-  tech = [],
-}:{
-  name: string;
-  image: string | StaticImageData;
-  description: string;
-  pn: string;
-  tech?: string[];
-}){
-  // Refence to a title card
-  const titleId = `project-${pn}-title`;
-
-  return(
-    <article className="relative overflow-hidden w-full h-[20rem] md:h-[23rem] rounded-xl bg-gray-50 hover:shadow-xl transition" aria-labelledby={titleId}>
-      {/* Image */}
-      <div className="relative aspect-[4/2] md:aspect-[16/9] overflow-hidden rounded-t-xl">
-        <Image
-          src={image}
-          alt={`Screenshot of ${name} project`}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
-          priority={false}
-        />
-      </div>
-
-      {/* Text */}
-      <div className="m-4 flex flex-col">
-        <h3 id={titleId} className="text-md md:text-lg font-semibold text-gray-900 leading-snug">{name}</h3>
-        <p className="pb-2 text-md text-gray-700 break-words">{description}</p>
-        
-        <div className="flex flex-wrap gap-2 items-center">
-          {tech.map((t) => (
-            <span key={t}>
-              <span className="rounded-full border border-gray-300 bg-gray-200 px-1.5 py-0.5 text-xs md:text-sm text-gray-700">{t}</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <Link
-        href={`/projects/${pn}`}
-        className="absolute inset-0 rounded-xl"
-        aria-labelledby={titleId}
-      />
-    </article>
-  )
-}
-
-function TechStackComponent({
-  category,
-  tech = [],
-}:{
-  category: string;
-  tech?: {name: string; icon: string}[];
-}){
-  return(
-    <article className="flex flex-row gap-4 items-center p-2">
-      <p className="text-md md:text-lg text-gray-800">{category}</p>
-      <ul className="flex flex-row w-full justify-end gap-2 md:gap-4">
-        {tech.map((t) => (
-          <li key={`${t.icon}-${t.name}`} className="relative group">
-            <Icon icon={t.icon} className="size-5 md:size-12" aria-hidden="true" />
-            <span className="sr-only">{t.name}</span>
-            <span className="absolute top-full left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-10">
-              {t.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </article>
-  )
-}
-
-function TimelineComponent({
-  classification,
-  role,
-  meta,
-  bullets,
-}:{
-  classification: string;
-  role: string;
-  meta: string;
-  bullets: string[];
-}){
-  return(
-    <article className="text-left">
-      <h3 className="text-xl font-extrabold italic uppercase text-gray-900">{classification}</h3>
-      <h4 className="text-lg font-bold text-gray-900">{role}</h4>
-      <p className="text-md font-semibold text-gray-800">{meta}</p>
-      <ul className="list-disc pl-5 text-md text-gray-700">
-        {bullets.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </article>
-  )
-}
-
-
 export default function Home() {
   const rm = useReducedMotion();
   return (
@@ -243,4 +125,118 @@ export default function Home() {
         </section>
     </main>
   );
+}
+
+function ScrollLoad(){
+  useEffect(() => {
+    const id = sessionStorage.getItem("scroll-target");
+    if (!id) return;
+    sessionStorage.removeItem("scroll-target");
+
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
+
+  return null;
+}
+
+function ProjectCardComponent({
+  name,
+  image,
+  description,
+  pn,
+  tech = [],
+}:{
+  name: string;
+  image: string | StaticImageData;
+  description: string;
+  pn: string;
+  tech?: string[];
+}){
+  // Refence to a title card
+  const titleId = `project-${pn}-title`;
+
+  return(
+    <Link href={`/projects/${pn}`} aria-labelledby={titleId} className="group block relative overflow-hidden w-full h-[20rem] md:h-[23rem] rounded-xl bg-gray-50 hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-800">
+      {/* Image */}
+      <div className="relative aspect-[4/2] md:aspect-[16/9] overflow-hidden rounded-t-xl">
+        <Image
+          src={image}
+          alt={`Screenshot of ${name} project`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+          priority={false}
+        />
+      </div>
+
+      {/* Text */}
+      <div className="m-4">
+        <h3 id={titleId} className="text-md md:text-lg font-semibold text-gray-900 leading-snug">
+          {name}
+        </h3>
+        <p className="pb-2 text-md text-gray-700">{description}</p>
+        <ul className="flex flex-wrap gap-2">
+          {tech.map(t => (
+            <li key={t}>
+              <span className="rounded-full border border-gray-300 bg-gray-200 px-1.5 py-0.5 text-xs md:text-sm text-gray-700">
+                {t}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Link>
+  )
+}
+
+function TechStackComponent({
+  category,
+  tech = [],
+}:{
+  category: string;
+  tech?: {name: string; icon: string}[];
+}){
+  return(
+    <article className="flex flex-row gap-4 items-center p-2">
+      <p className="text-md md:text-lg text-gray-800">{category}</p>
+      <ul className="flex flex-row w-full justify-end gap-2 md:gap-4">
+        {tech.map((t) => (
+          <li key={`${t.icon}-${t.name}`} className="relative group">
+            <Icon icon={t.icon} className="size-5 md:size-12" aria-hidden="true" />
+            <span className="sr-only">{t.name}</span>
+            <span className="absolute top-full left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-10">
+              {t.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  )
+}
+
+function TimelineComponent({
+  classification,
+  role,
+  meta,
+  bullets,
+}:{
+  classification: string;
+  role: string;
+  meta: string;
+  bullets: string[];
+}){
+  return(
+    <article className="text-left">
+      <h3 className="text-xl font-extrabold italic uppercase text-gray-900">{classification}</h3>
+      <h4 className="text-lg font-bold text-gray-900">{role}</h4>
+      <p className="text-md font-semibold text-gray-800">{meta}</p>
+      <ul className="list-disc pl-5 text-md text-gray-700">
+        {bullets.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </article>
+  )
 }
