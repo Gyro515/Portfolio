@@ -124,13 +124,14 @@ function TimelineComponent({
   )
 }
 
+
 export default function Home() {
   const rm = useReducedMotion();
   return (
     <main className="flex flex-col justify-start items-center text-center pb-20 mx-auto w-full max-w-screen-xl">
       <ScrollLoad/>
         {/* Home Section */}
-        <section id="home" aria-labelledby="home-heading" className="flex flex-col items-center justify-center min-h-[clamp(540px,91.75svh,900px)] w-[90%] md:w-[60%] gap-4">
+        <section id="home" aria-labelledby="home-heading" className="flex flex-col items-center justify-center min-h-[clamp(540px,91.75svh,900px)] w-[90%] md:w-[50%] gap-4">
           <motion.h1
             id="home-heading"
             className="text-black text-3xl md:text-5xl lg:text-5xl font-bold tracking-tight"
@@ -156,11 +157,11 @@ export default function Home() {
           <h2 id="projects-heading" className="text-3xl md:text-5xl font-extrabold italic uppercase text-gray-900">My Projects</h2>
           <div className="w-[80%] rounded-xl border border-gray-200 bg-gray-200 p-4 shadow-sm">
               <div className="h-[22rem] md:h-[25rem] overflow-y-auto pr-1" role="region" aria-label="Project list">
-                <div className="grid gap-4 grid-cols-1 xl:grid-cols-2">
+                <ul className="grid gap-4 grid-cols-1 xl:grid-cols-2">
                   {projectData.map((p) => {
                     const pn = p.name.toLowerCase().replace(/\s+/g, "_")
                     return (
-                      <li key={pn}>
+                      <li key={pn} className="list-none">
                         <ProjectCardComponent
                         key={p.name}
                         name={p.name}
@@ -172,7 +173,7 @@ export default function Home() {
                       </li>
                     );
                   })}
-                </div>
+                </ul>
               </div>
             </div>
 
@@ -239,8 +240,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-          </section>
-        </main>
+        </section>
+    </main>
   );
 }
