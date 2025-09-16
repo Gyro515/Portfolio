@@ -5,9 +5,13 @@ import Footer from "./section/Footer"
 
 
 export const metadata = {
-  title: "JSB - Justin Sage Briones",
+  title: {
+    default: "JSB - Justin Sage Briones",
+    template: "%s | JSB",
+  },
   description: "Portfolio of Justin Sage Briones",
 };
+
 
 export default function RootLayout({
   children,
