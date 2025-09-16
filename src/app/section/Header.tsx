@@ -19,10 +19,10 @@ export default function Header() {
       router.push("/", { scroll: false });
     }
   };
-
+  
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-xl pt-[env(safe-area-inset-top)]">
-      <div className="mx-auto md:max-w-screen-xl px-4 md:px-6">
+      <div className="mx-auto md:max-w-screen-lg px-5">
         <div className="flex h-20 items-center justify-between">
           {/* Logo and Navigation */}
           <div className="flex flex-row items-center gap-10"> 
@@ -30,8 +30,8 @@ export default function Header() {
               <Image src="/favicon.ico" alt="Logo" height={48} width={48} onClick={() => scrollToSection("home")} className="brightness-50 hover:scale-110 transition-transform cursor-pointer"/>
             </div>
             <nav className="sticky hidden md:flex gap-10 text-lg">
-              <a onClick={() => scrollToSection('technologies')} className="hover:scale-110 transition-transform cursor-pointer">Technologies</a>
               <a onClick={() => scrollToSection('projects')} className="hover:scale-110 transition-transform cursor-pointer">My Projects</a>
+              <a onClick={() => scrollToSection('technologies')} className="hover:scale-110 transition-transform cursor-pointer">Technologies</a>
               <a onClick={() => scrollToSection('about')} className="hover:scale-110 transition-transform cursor-pointer">About Me</a>
             </nav>
           </div>
@@ -44,7 +44,7 @@ export default function Header() {
           </div>
 
           {/* Mobile */}
-          <button className="md:hidden p-2 rounded hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>
+          <button className="md:hidden rounded hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6"/>}
           </button>
         </div>
@@ -66,9 +66,9 @@ export default function Header() {
               exit={{ y: 0, height: 0}}
               transition={{ duration: 0.4, ease: "easeInOut"}}
             >
-        
-              <a onClick={() => scrollToSection('technologies')} className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer">Technologies</a>
+
               <a onClick={() => scrollToSection('projects')} className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer">My Projects</a>
+              <a onClick={() => scrollToSection('technologies')} className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer">Technologies</a>
               <a onClick={() => scrollToSection('about')} className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer">About Me</a>
 
               <div className="flex items-center gap-8 px-5 py-4 border-t ">
