@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { projectData } from './data/projectData';
 import { motion, useReducedMotion } from 'framer-motion';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-start items-center text-center pb-20 mx-auto w-full max-w-screen-xl">
       <ScrollLoad />
+      <SpeedInsights />
       {/* Home Section */}
       <section
         id="home"
