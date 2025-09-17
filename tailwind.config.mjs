@@ -1,12 +1,15 @@
-export default {
-    content: [
-      "./src/app/**/*.{ts,tsx}",      // your app directory (App Router)
-      "./src/**/*.{ts,tsx}", 
-      "./src/components/**/*.{ts,tsx}" // if you add components later
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  }
-  
+/** @type {import('tailwindcss').Config} */
+const config = {
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+export default config;
