@@ -2,3 +2,6 @@
 *.mjs linguist-detectable=true
 *.js linguist-detectable=true
 *.html linguist-detectable=true
+src/types/* linguist-vendored
+generated/* linguist-generated
+
