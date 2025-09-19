@@ -2,6 +2,14 @@
 
 import { Icon } from '@iconify/react';
 
+/**
+ * Renders the technologies section.
+ *
+ * @param props Component props.
+ * @param props.category Category of the group of technologies (e.g., "Languages").
+ * @param props.tech Technology objects list containing `name` and `icon`.
+ * @returns Returns the rendered section component.
+ */
 export default function TechStack({
   category,
   tech = [],

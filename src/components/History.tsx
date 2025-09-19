@@ -1,5 +1,15 @@
 'use client';
 
+/**
+ * Renders the about me section that includes education and certifications.
+ *
+ * @param props Component props.
+ * @param props.classification Classification of information.
+ * @param props.role Role within the classification.
+ * @param props.meta Location and date.
+ * @param props.bullets List of items that include responsibilities, achievements, etc.
+ * @returns Returns the rendered section component.
+ */
 export default function History({
   classification,
   role,

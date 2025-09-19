@@ -6,6 +6,11 @@ import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
+/**
+ * Header that includes logo, navigation, social links, and a mobile hamburger menu.
+ *
+ * @returns Header component for the site.
+ */
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();

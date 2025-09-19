@@ -9,6 +9,11 @@ import {
   TbBrandGithub,
 } from 'react-icons/tb';
 
+/**
+ * Footer that includes tech stack used for the site, contact information, and copyright.
+ *
+ * @returns Footer component for the site.
+ */
 export default function Footer() {
   return (
     <footer className="w-full shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.4)] pt-[env(safe-area-inset-top)] relative z-50">

@@ -1,8 +1,20 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
+import { getPublicImageUrl } from '@/lib/supabaseClient';
 
+/**
+ * Renders the projects section that includes project cards that links to its detail page.
+ *
+ * @param props Component props.
+ * @param props.name Name of the project.
+ * @param props.image Image sample of the project.
+ * @param props.description Description of the project.
+ * @param props.pn Identifier for routing.
+ * @param props.tech Optional list of technologies used in the project.
+ * @returns Returns the rendered section component.
+ */
 export default function ProjectCard({
   name,
   image,
@@ -11,7 +23,7 @@ export default function ProjectCard({
   tech = [],
 }: {
   name: string;
-  image: string | StaticImageData;
+  image: string;
   description: string;
   pn: string;
   tech?: string[];
@@ -27,7 +39,7 @@ export default function ProjectCard({
       {/* Image */}
       <div className="relative h-[35%] md:h-[45%] w-full overflow-hidden rounded-t-xl">
         <Image
-          src={image}
+          src={getPublicImageUrl(image, 'project-images')}
           alt={`Screenshot of ${name} project`}
           fill
           className="object-cover"
