@@ -7,10 +7,13 @@ import Footer from './layout/footer';
  * Metadata for search engine optimization.
  */
 export const metadata = {
-  title: 'JSB - Justin Sage Briones',
+  title: {
+    default: 'Justin Sage Briones | JSB Personal',
+    template: '%s | Justin Sage Briones',
+  },
   description:
-    'Portfolio of Justin Sage Briones - specializing in data analytics, full-stack development, and automation.',
-  icon: {
+    'Portfolio of Justin Sage Briones — recent Computer Science graduate focused on building impactful solutions and turning complex challenges into meaningful and actionable insights.',
+  icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
   },

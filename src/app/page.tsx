@@ -63,8 +63,9 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 1.5 }}
         >
-          Recent graduate specializing in data analytics, full-stack development, and automation. I
-          am passionate about transforming data into meaningful and actionable insights.
+          Recent Computer Science graduate passionate about solving problems and building impactful
+          solutions. I enjoy leveraging technology and data to turn complex challenges into
+          meaningful and actionable insights.
         </motion.p>
       </section>
 
@@ -148,8 +149,8 @@ export default function Home() {
           <div className="flex flex-col gap-8 pt-4 md:w-[80%] mx-auto">
             <p className="text-md md:text-lg leading-relaxed text-gray-600">
               I recently earned my BSc Honours in Applied Computer Science with a Statistics minor,
-              where I developed a strong foundation across full-stack development, data analytics,
-              and system security. I&apos;m driven by a desire to solve problems and create
+              where I developed a strong foundation across database management, data analytics, and
+              full-stack development. Driven by a desire to solve problems, I strive to create
               solutions that bring meaningful impact. My goal is to continue growing my skills while
               contributing to projects that help people and organizations work smarter and make
               data-driven decisions.
