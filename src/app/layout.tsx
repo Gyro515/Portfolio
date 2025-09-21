@@ -7,11 +7,13 @@ import Footer from './layout/footer';
  * Metadata for search engine optimization.
  */
 export const metadata = {
-  title: {
-    default: 'JSB - Justin Sage Briones',
-    template: '%s | JSB',
+  title: 'JSB - Justin Sage Briones',
+  description:
+    'Portfolio of Justin Sage Briones - specializing in data analytics, full-stack development, and automation.',
+  icon: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
   },
-  description: 'Portfolio of Justin Sage Briones',
 };
 
 /**
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
         />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
