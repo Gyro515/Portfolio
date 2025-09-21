@@ -4,7 +4,27 @@ import { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Image from 'next/image';
+
+/**
+ * Smoothly scrolls to a specific section on the page.
+ *
+ * @param id The DOM element ID.
+ * @param pathname Route path.
+ * @param router Next.js router instance.
+ */
+export const scrollToSection = (id: string, pathname: string, router: AppRouterInstance) => {
+  if (pathname === '/') {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  } else {
+    sessionStorage.setItem('scroll-target', id);
+    router.push('/', { scroll: false });
+  }
+};
 
 /**
  * Header that includes logo, navigation, social links, and a mobile hamburger menu.
@@ -15,15 +35,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-
-  const scrollToSection = (id: string) => {
-    if (pathname === '/') {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      sessionStorage.setItem('scroll-target', id);
-      router.push('/', { scroll: false });
-    }
-  };
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-xl pt-[env(safe-area-inset-top)]">
@@ -37,25 +48,25 @@ export default function Header() {
                 alt="Logo"
                 height={48}
                 width={48}
-                onClick={() => scrollToSection('home')}
+                onClick={() => scrollToSection('home', pathname, router)}
                 className="brightness-50 hover:scale-110 transition-transform cursor-pointer"
               />
             </div>
             <nav className="sticky hidden md:flex gap-10 text-lg">
               <a
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('projects', pathname, router)}
                 className="hover:scale-110 transition-transform cursor-pointer"
               >
                 My Projects
               </a>
               <a
-                onClick={() => scrollToSection('technologies')}
+                onClick={() => scrollToSection('technologies', pathname, router)}
                 className="hover:scale-110 transition-transform cursor-pointer"
               >
                 Technologies
               </a>
               <a
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection('about', pathname, router)}
                 className="hover:scale-110 transition-transform cursor-pointer"
               >
                 About Me
@@ -98,19 +109,19 @@ export default function Header() {
               transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
               <a
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('projects', pathname, router)}
                 className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer"
               >
                 My Projects
               </a>
               <a
-                onClick={() => scrollToSection('technologies')}
+                onClick={() => scrollToSection('technologies', pathname, router)}
                 className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer"
               >
                 Technologies
               </a>
               <a
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection('about', pathname, router)}
                 className="block w-full px-5 py-4 active:bg-gray-100 cursor-pointer"
               >
                 About Me

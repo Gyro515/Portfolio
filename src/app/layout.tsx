@@ -2,6 +2,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react'; // Vercel Analytics
 import Header from './layout/header';
 import Footer from './layout/footer';
+import TopLoader from 'nextjs-toploader';
 
 /**
  * Metadata for search engine optimization.
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
+        <TopLoader color="#3b82f6" height={3} showSpinner={false} crawlSpeed={200} />
         {/* HEADER */}
         <Header />
         {children}
