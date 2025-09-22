@@ -16,10 +16,7 @@ import Image from 'next/image';
  */
 export const scrollToSection = (id: string, pathname: string, router: AppRouterInstance) => {
   if (pathname === '/') {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   } else {
     sessionStorage.setItem('scroll-target', id);
     router.push('/', { scroll: false });
@@ -37,37 +34,54 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-xl pt-[env(safe-area-inset-top)]">
+    <header className="w-full fixed top-0 inset-x-0 z-50 bg-white shadow-xl pt-[env(safe-area-inset-top)]">
       <div className="mx-auto md:max-w-screen-lg px-5">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-20 items-center">
           {/* Logo and Navigation */}
-          <div className="flex flex-row items-center gap-10">
-            <div className="flex items-center gap-4">
+          <div
+            className="
+              flex items-center
+              space-x-10
+              supports-[gap:2.5rem]:space-x-0 supports-[gap:2.5rem]:gap-10
+            "
+          >
+            <button
+              type="button"
+              onClick={() => scrollToSection('home', pathname, router)}
+              className="flex items-center space-x-4 cursor-pointer"
+              aria-label="Go to Home"
+            >
               <Image
                 src="/favicon.ico"
                 alt="Logo"
                 height={48}
                 width={48}
-                onClick={() => scrollToSection('home', pathname, router)}
-                className="brightness-50 hover:scale-110 transition-transform cursor-pointer"
+                className="brightness-50 hover:scale-110 transition-transform"
               />
-            </div>
-            <nav className="sticky hidden md:flex gap-10 text-lg">
+            </button>
+
+            <nav
+              className="
+                hidden md:flex text-lg
+                space-x-10
+                supports-[gap:2.5rem]:space-x-0 supports-[gap:2.5rem]:gap-10
+              "
+            >
               <a
                 onClick={() => scrollToSection('projects', pathname, router)}
-                className="hover:scale-110 transition-transform cursor-pointer"
+                className="cursor-pointer hover:scale-110 transition-transform"
               >
                 My Projects
               </a>
               <a
                 onClick={() => scrollToSection('technologies', pathname, router)}
-                className="hover:scale-110 transition-transform cursor-pointer"
+                className="cursor-pointer hover:scale-110 transition-transform"
               >
                 Technologies
               </a>
               <a
                 onClick={() => scrollToSection('about', pathname, router)}
-                className="hover:scale-110 transition-transform cursor-pointer"
+                className="cursor-pointer hover:scale-110 transition-transform"
               >
                 About Me
               </a>
@@ -75,27 +89,48 @@ export default function Header() {
           </div>
 
           {/* Social Media */}
-          <div className="hidden md:flex justify-end gap-10">
-            <a href="https://github.com/gyro515" target="_blank" rel="noreferrer">
-              <Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition-transform " />
+          <div
+            className="
+              ml-auto hidden md:flex items-center
+              space-x-8
+              supports-[gap:2rem]:space-x-0 supports-[gap:2rem]:gap-8
+            "
+          >
+            <a
+              href="https://github.com/gyro515"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="inline-flex"
+            >
+              <Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition-transform" />
             </a>
-            <a href="https://linkedin.com/in/justin-briones09" target="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/in/justin-briones09"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex"
+            >
               <Linkedin className="h-6 w-6 hover:text-blue-600 hover:scale-110 transition-transform" />
             </a>
-            <a href="mailto:jusagebriones@yahoo.com">
+            <a href="mailto:jusagebriones@yahoo.com" aria-label="Email" className="inline-flex">
               <Mail className="h-6 w-6 hover:text-red-500 hover:scale-110 transition-transform" />
             </a>
           </div>
 
           {/* Mobile */}
           <button
-            className="md:hidden rounded hover:bg-gray-100"
+            className="ml-auto md:hidden rounded p-2 hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
+
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
@@ -103,10 +138,10 @@ export default function Header() {
             <motion.div className="fixed inset-0 md:hidden" onClick={() => setIsOpen(false)} />
             <motion.div
               className="absolute inset-x-0 bg-white md:hidden shadow-xl border-t origin-top overflow-y-hidden"
-              initial={{ y: 0, height: 0 }}
-              animate={{ y: 0, height: 'auto' }}
-              exit={{ y: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              initial={{ height: 0 }}
+              animate={{ height: 'auto' }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.35, ease: 'easeInOut' }}
             >
               <a
                 onClick={() => scrollToSection('projects', pathname, router)}
@@ -127,14 +162,32 @@ export default function Header() {
                 About Me
               </a>
 
-              <div className="flex items-center gap-8 px-5 py-4 border-t ">
-                <a href="https://github.com/gyro515" target="_blank" rel="noreferrer">
+              <div
+                className="
+                  flex items-center border-t px-5 py-4
+                  space-x-8
+                  supports-[gap:2rem]:space-x-0 supports-[gap:2rem]:gap-8
+                "
+              >
+                <a
+                  href="https://github.com/gyro515"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="inline-flex"
+                >
                   <Github className="h-6 w-6 hover:text-green-400 hover:scale-110 transition" />
                 </a>
-                <a href="https://linkedin.com/in/justin-briones09" target="_blank" rel="noreferrer">
+                <a
+                  href="https://linkedin.com/in/justin-briones09"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex"
+                >
                   <Linkedin className="h-6 w-6 hover:text-blue-600 hover:scale-110 transition" />
                 </a>
-                <a href="mailto:jusagebriones@yahoo.com">
+                <a href="mailto:jusagebriones@yahoo.com" aria-label="Email" className="inline-flex">
                   <Mail className="h-6 w-6 hover:text-red-500 hover:scale-110 transition" />
                 </a>
               </div>

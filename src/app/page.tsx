@@ -17,12 +17,10 @@ function ScrollToSection() {
     const id = sessionStorage.getItem('scroll-target');
     if (!id) return;
     sessionStorage.removeItem('scroll-target');
-
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }, []);
-
   return null;
 }
 
@@ -36,14 +34,22 @@ export default function Home() {
   const { projects, groupedTech, history } = useSupabaseDb();
 
   return (
-    <main className="flex flex-col justify-start items-center text-center pb-32 mx-auto w-full max-w-screen-xl">
+    <main className="flex flex-col items-center text-center pb-32 mx-auto w-full max-w-screen-xl">
       <ScrollToSection />
       <SpeedInsights />
+
       {/* Home Section */}
       <section
         id="home"
         aria-labelledby="home-heading"
-        className="flex flex-col items-center justify-center min-h-[clamp(540px,91.75svh,900px)] w-[90%] md:w-[60%] gap-4"
+        className="
+          flex flex-col items-center justify-center
+          w-[90%] md:w-[60%]
+          space-y-4 supports-[gap:1rem]:space-y-0 supports-[gap:1rem]:gap-4
+          min-h-[clamp(540px,91.75vh,900px)]
+          supports-[height:100svh]:min-h-[clamp(540px,91.75svh,900px)]
+          supports-[height:100dvh]:min-h-[clamp(540px,91.75dvh,900px)]
+        "
       >
         <motion.h1
           id="home-heading"
@@ -69,11 +75,23 @@ export default function Home() {
         </motion.p>
       </section>
 
-      {/* Project Section */}
+      {/* Projects Section */}
       <section
         id="projects"
         aria-labelledby="projects-heading"
-        className="flex flex-col items-center justify-start scroll-mt-[clamp(30px,2.5svh,96px)] min-h-[clamp(540px,80svh,900px)] w-full md:w-[70%] gap-8 md:gap-10"
+        className="
+          flex flex-col items-center justify-start
+          w-full md:w-[70%]
+          space-y-8 md:space-y-10
+          supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
+          supports-[gap:2.5rem]:md:gap-10
+          scroll-mt-24
+          supports-[height:100svh]:scroll-mt-[clamp(30px,2.5svh,96px)]
+          supports-[height:100dvh]:scroll-mt-[clamp(30px,2.5dvh,96px)]
+          min-h-[clamp(540px,80vh,900px)]
+          supports-[height:100svh]:min-h-[clamp(540px,80svh,900px)]
+          supports-[height:100dvh]:min-h-[clamp(540px,80dvh,900px)]
+        "
       >
         <h2
           id="projects-heading"
@@ -81,6 +99,7 @@ export default function Home() {
         >
           My Projects
         </h2>
+
         <div className="w-[80%] rounded-xl border border-gray-200 bg-gray-200 p-4 shadow-sm">
           <div
             className="h-[22rem] md:h-[24rem] overflow-y-auto pr-1"
@@ -107,11 +126,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Technologies */}
+      {/* Technologies Section */}
       <section
         id="technologies"
         aria-labelledby="technologies-heading"
-        className="flex flex-col items-center justify-start scroll-mt-[clamp(30px,2.5svh,96px)] min-h-[clamp(540px,80svh,900px)] w-[90%] md:w-[70%] gap-10"
+        className="
+          flex flex-col items-center justify-start
+          w-[90%] md:w-[70%]
+          space-y-10 supports-[gap:2.5rem]:space-y-0 supports-[gap:2.5rem]:gap-10
+          scroll-mt-24
+          supports-[height:100svh]:scroll-mt-[clamp(30px,2.5svh,96px)]
+          supports-[height:100dvh]:scroll-mt-[clamp(30px,2.5dvh,96px)]
+          min-h-[clamp(540px,80vh,900px)]
+          supports-[height:100svh]:min-h-[clamp(540px,80svh,900px)]
+          supports-[height:100dvh]:min-h-[clamp(540px,80dvh,900px)]
+        "
       >
         <div className="flex flex-col items-center justify-center">
           <h2
@@ -137,7 +166,21 @@ export default function Home() {
       <section
         id="about"
         aria-labelledby="about-heading"
-        className="flex flex-col items-center justify-start scroll-mt-[clamp(30px,20svh,96px)] md:scroll-mt-[clamp(30px,2.5svh,96px)] min-h-[clamp(540px,80svh,900px)] w-[90%] md:w-[70%] gap-8 md:gap-10"
+        className="
+          flex flex-col items-center justify-start
+          w-[90%] md:w-[70%]
+          space-y-8 md:space-y-10
+          supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
+          supports-[gap:2.5rem]:md:gap-10
+          scroll-mt-24
+          supports-[height:100svh]:scroll-mt-[clamp(30px,20svh,96px)]
+          supports-[height:100dvh]:scroll-mt-[clamp(30px,20dvh,96px)]
+          supports-[height:100svh]:md:scroll-mt-[clamp(30px,2.5svh,96px)]
+          supports-[height:100dvh]:md:scroll-mt-[clamp(30px,2.5dvh,96px)]
+          min-h-[clamp(540px,80vh,900px)]
+          supports-[height:100svh]:min-h-[clamp(540px,80svh,900px)]
+          supports-[height:100dvh]:min-h-[clamp(540px,80dvh,900px)]
+        "
       >
         <div className="container mx-auto px-4">
           <h2
@@ -146,18 +189,28 @@ export default function Home() {
           >
             About Me
           </h2>
-          <div className="flex flex-col gap-8 pt-4 md:w-[80%] mx-auto">
+          <div
+            className="
+              flex flex-col pt-4 md:w-[80%] mx-auto
+              space-y-8 supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
+            "
+          >
             <p className="text-md md:text-lg leading-relaxed text-gray-600">
-              I recently earned my BSc Honours in Applied Computer Science with a Statistics minor,
-              where I developed a strong foundation across database management, data analytics, and
-              full-stack development. Driven by a desire to solve problems, I strive to create
-              solutions that bring meaningful impact. My goal is to continue growing my skills while
-              contributing to projects that help people and organizations work smarter and make
-              data-driven decisions.
+              I recently earned my B.Sc. (Honours) in Applied Computer Science with a Statistics
+              minor, where I developed a strong foundation across database management, data
+              analytics, and full-stack development. Driven by a desire to solve problems, I strive
+              to create solutions that bring meaningful impact. My goal is to continue growing my
+              skills while contributing to projects that help people and organizations work smarter
+              and make data-driven decisions.
             </p>
 
             {/* History Component */}
-            <div className="pt-1 flex flex-col gap-5 md:pl-10 md:border-l-2 md:border-gray-900">
+            <div
+              className="
+                pt-1 flex flex-col md:pl-10 md:border-l-2 md:border-gray-900
+                space-y-5 supports-[gap:1.25rem]:space-y-0 supports-[gap:1.25rem]:gap-5
+              "
+            >
               {history.map((p) => {
                 return (
                   <li key={p.id} className="list-none">

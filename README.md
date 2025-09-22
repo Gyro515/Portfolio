@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JSB Personal
 
-## Getting Started
+![Website Preview](public/preview.png)
 
-First, run the development server:
+> :closed_lock_with_key: Live domain is up and running that is available upon request.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## **:information_desk_person: What It's About**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A personal website that showcases my projects, skills, and experience through the years. Built with the latest technologies, including Next.js, Tailwind CSS, and Supabase, which allows for a seamless experience across all devices, fast and optimized performance, and is designed to grow with me as I continue to learn and take on new challenges.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## **:hammer_and_wrench: How It Works**
 
-To learn more about Next.js, take a look at the following resources:
+| Category               | Technologies                                                                                                                                                                                          |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Frontend**           | [Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/) |
+| **Database & Backend** | [Supabase](https://supabase.com/) (PostgreSQL database with built-in APIs)                                                                                                                            |
+| **Deployment**         | [Vercel](https://vercel.com/)                                                                                                                                                                         |
+| **Tools**              | [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [PostCSS](https://postcss.org/), [Autoprefixer](https://github.com/postcss/autoprefixer)                                             |
+| **Version Control**    | [Git](https://git-scm.com/), [GitHub](https://github.com/)                                                                                                                                            |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## **:clipboard: What's Included**
 
-## Deploy on Vercel
+- **Dynamic Routing** - Projects come with its own dedicated page created dynamically with the Next.js App Router.
+- **Fully Responsive** - Built with a mobile-first design approach perfect for any screen sizes.
+- **Smooth Animations** - Smooth and clean transitions between sections by Framer Motion.
+- **High Performance** - Fast load times and lightweight through Next.js and Vercel hosting.
+- **Analytics** - Vercel Analytics and Speed Insights are incorporated to monitor performance and traffic.
+- **Centralized** Data Management - Content is pulled directly from a cloud database allowing for seamless changes without redeployment.
+- **Accessibility** - ARIA labels, semantic HTML, and responsive font sizes are used for an inclusive experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## :scroll: **License**
+
+This project is unlicensed and intended for a personal website use only.
+
+---

@@ -13,7 +13,7 @@ export const metadata = {
     template: '%s | Justin Sage Briones',
   },
   description:
-    'Portfolio of Justin Sage Briones — recent Computer Science graduate focused on building impactful solutions and turning complex challenges into meaningful and actionable insights.',
+    'Portfolio of Justin Sage Briones - recent Computer Science graduate focused on building impactful solutions and turning complex challenges into meaningful and actionable insights.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
