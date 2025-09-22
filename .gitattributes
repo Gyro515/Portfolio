@@ -5,3 +5,14 @@
 src/types/* linguist-vendored
 generated/* linguist-generated
 
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
+package-lock.json text eol=lf
