@@ -10,7 +10,7 @@ import { getPublicImageUrl } from '@/lib/supabaseClient';
  * @param props Component props.
  * @param props.name Name of the project.
  * @param props.image Image sample of the project.
- * @param props.description Description of the project.
+ * @param props.summary Summary of the project.
  * @param props.pn Identifier for routing.
  * @param props.tech Optional list of technologies used in the project.
  * @returns Returns the rendered section component.
@@ -18,13 +18,13 @@ import { getPublicImageUrl } from '@/lib/supabaseClient';
 export default function ProjectCard({
   name,
   image,
-  description,
+  summary,
   pn,
   tech = [],
 }: {
   name: string;
   image: string;
-  description: string;
+  summary: string;
   pn: string;
   tech?: string[];
 }) {
@@ -53,7 +53,7 @@ export default function ProjectCard({
         <h3 id={titleId} className="text-md md:text-lg font-semibold text-gray-900 leading-loose">
           {name}
         </h3>
-        <p className="pb-2 text-md text-gray-700">{description}</p>
+        <p className="pb-2 text-md text-gray-700">{summary}</p>
         <ul className="flex flex-wrap gap-2">
           {tech.map((t) => (
             <li key={t}>

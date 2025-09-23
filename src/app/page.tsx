@@ -114,7 +114,7 @@ export default function Home() {
                     <ProjectCard
                       name={p.name}
                       image={p.image}
-                      description={p.description}
+                      summary={p.summary}
                       pn={pn}
                       tech={Array.isArray(p.tech) ? p.tech : []}
                     />
