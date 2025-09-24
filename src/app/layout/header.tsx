@@ -71,7 +71,7 @@ export default function Header() {
                 onClick={() => scrollToSection('projects', pathname, router)}
                 className="cursor-pointer hover:scale-110 transition-transform"
               >
-                My Projects
+                Project
               </a>
               <a
                 onClick={() => scrollToSection('technologies', pathname, router)}

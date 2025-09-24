@@ -12,11 +12,15 @@ import { supabase } from '../lib/supabaseClient';
  * Record from the `projects` table.
  */
 export type Project = {
+  summary: string;
   id: string;
   name: string;
   description: string;
   image: string;
   tech: string[] | null;
+  preview?: { file: string; desc?: string }[] | null;
+  overview: string | null;
+  features?: { category: string; bullets: string[] }[] | null;
 };
 
 /**

@@ -82,7 +82,6 @@ export default function Home() {
         className="
           flex flex-col items-center justify-start
           w-full md:w-[70%]
-          space-y-8 md:space-y-10
           supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
           supports-[gap:2.5rem]:md:gap-10
           scroll-mt-24
@@ -97,7 +96,7 @@ export default function Home() {
           id="projects-heading"
           className="text-3xl md:text-5xl font-extrabold italic uppercase text-gray-900"
         >
-          My Projects
+          What I&apos;ve Worked On
         </h2>
 
         <div className="w-[80%] rounded-xl border border-gray-200 bg-gray-200 p-4 shadow-sm">
@@ -149,7 +148,7 @@ export default function Home() {
           >
             What I build with
           </h2>
-          <p className="pt-4 text-md md:text-lg leading-relaxed text-gray-600 w-[90%] md:w-[80%]">
+          <p className="pt-9 text-md md:text-lg leading-relaxed text-gray-600 w-[90%] md:w-[80%]">
             Over the years I&apos;ve worked with cutting-edge technologies, making interfaces easy
             to use, connecting the pieces behind the scenes and bringing it to life.
           </p>
@@ -191,7 +190,7 @@ export default function Home() {
           </h2>
           <div
             className="
-              flex flex-col pt-4 md:w-[80%] mx-auto
+              flex flex-col pt-9 md:w-[80%] mx-auto
               space-y-8 supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
             "
           >

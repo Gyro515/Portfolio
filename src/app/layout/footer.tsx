@@ -17,7 +17,7 @@ import {
  */
 export default function Footer() {
   return (
-    <footer className="w-full shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.4)] pt-[env(safe-area-inset-top)] relative z-50">
+    <footer className="w-full shadow-[0_-12px_24px_-12px_rgba(0,0,0,0.35)] pt-[env(safe-area-inset-top)] relative z-50">
       <div className="mx-auto md:max-w-screen-lg px-5 py-4">
         <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between space-y-1 supports-[gap:0.25rem]:space-y-0 supports-[gap:0.25rem]:gap-1 pb-4">
           {/* Social Media */}

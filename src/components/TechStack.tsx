@@ -23,7 +23,7 @@ export default function TechStack({
       <ul className="flex flex-row justify-end gap-2 md:gap-4">
         {tech.map((t) => (
           <li key={`${t.icon}-${t.name}`} className="relative group">
-            <Icon icon={t.icon} className="size-5 md:size-9" aria-hidden="true" />
+            <Icon icon={t.icon} className="size-6 md:size-10" aria-hidden="true" />
             <span className="sr-only">{t.name}</span>
             <span className="absolute top-full left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-10">
               {t.name}

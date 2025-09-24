@@ -49,15 +49,15 @@ export default function ProjectCard({
       </div>
 
       {/* Text */}
-      <div className="m-4">
+      <div className="flex flex-col items-center py-1 md:py-3">
         <h3 id={titleId} className="text-md md:text-lg font-semibold text-gray-900 leading-loose">
           {name}
         </h3>
-        <p className="pb-2 text-md text-gray-700">{summary}</p>
-        <ul className="flex flex-wrap gap-2">
+        <p className="text-md text-gray-700 text-balance">{summary}</p>
+        <ul className="flex flex-wrap gap-2 items-stretch py-2 mx-3">
           {tech.map((t) => (
             <li key={t}>
-              <span className="rounded-full border border-gray-300 bg-gray-200 px-1.5 py-0.5 text-xs md:text-sm text-gray-700">
+              <span className="rounded-full border border-gray-300 bg-gray-200 px-1.5 py-0.5 text-sm text-gray-700">
                 {t}
               </span>
             </li>
