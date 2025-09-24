@@ -63,7 +63,7 @@ export default function Home() {
         </motion.h1>
 
         <motion.p
-          className="text-md md:text-lg text-gray-600 leading-relaxed"
+          className="text-md md:text-lg text-gray-600 text-balance md:leading-relaxed md:text-wrap"
           initial={rm ? false : { opacity: 0, y: 100 }}
           whileInView={rm ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -192,7 +192,7 @@ export default function Home() {
               space-y-8 supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
             "
           >
-            <p className="text-md md:text-lg leading-relaxed text-gray-600">
+            <p className="text-md md:text-lg leading-relaxed text-gray-600 text-balance md:text-wrap">
               I recently earned my B.Sc. (Honours) in Applied Computer Science with a Statistics
               minor, where I developed a strong foundation across database management, data
               analytics, and full-stack development. Driven by a desire to solve problems, I strive

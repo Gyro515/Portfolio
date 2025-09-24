@@ -22,7 +22,7 @@ export default function History({
   bullets: string[];
 }) {
   return (
-    <article className="text-left">
+    <article className="text-left leading-relaxed">
       <h3 className="text-xl font-extrabold italic uppercase text-gray-900">{classification}</h3>
       <h4 className="text-lg font-bold text-gray-900">{role}</h4>
       <p className="text-md font-semibold text-gray-800">{meta}</p>
