@@ -131,9 +131,10 @@ export default function Home() {
         aria-labelledby="technologies-heading"
         className="
           flex flex-col items-center justify-start
-          w-[90%] md:w-[70%]
-          space-y-10 supports-[gap:2.5rem]:space-y-0 supports-[gap:2.5rem]:gap-10
-          scroll-mt-24
+          w-full md:w-[70%]
+          supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
+          supports-[gap:2.5rem]:md:gap-5
+          scroll-mt-24 pb-8
           supports-[height:100svh]:scroll-mt-[clamp(30px,2.5svh,96px)]
           supports-[height:100dvh]:scroll-mt-[clamp(30px,2.5dvh,96px)]
           min-h-[clamp(540px,80vh,900px)]
@@ -148,7 +149,7 @@ export default function Home() {
           >
             What I build with
           </h2>
-          <p className="pt-9 text-md md:text-lg leading-relaxed text-gray-600 w-[90%] md:w-[80%]">
+          <p className="pt-8 text-md md:text-lg leading-relaxed text-gray-600 w-[90%] md:w-[80%]">
             Over the years I&apos;ve worked with cutting-edge technologies, making interfaces easy
             to use, connecting the pieces behind the scenes and bringing it to life.
           </p>
@@ -167,15 +168,12 @@ export default function Home() {
         aria-labelledby="about-heading"
         className="
           flex flex-col items-center justify-start
-          w-[90%] md:w-[70%]
-          space-y-8 md:space-y-10
+          w-full md:w-[70%]
           supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
           supports-[gap:2.5rem]:md:gap-10
           scroll-mt-24
-          supports-[height:100svh]:scroll-mt-[clamp(30px,20svh,96px)]
-          supports-[height:100dvh]:scroll-mt-[clamp(30px,20dvh,96px)]
-          supports-[height:100svh]:md:scroll-mt-[clamp(30px,2.5svh,96px)]
-          supports-[height:100dvh]:md:scroll-mt-[clamp(30px,2.5dvh,96px)]
+          supports-[height:100svh]:scroll-mt-[clamp(30px,2.5svh,96px)]
+          supports-[height:100dvh]:scroll-mt-[clamp(30px,2.5dvh,96px)]
           min-h-[clamp(540px,80vh,900px)]
           supports-[height:100svh]:min-h-[clamp(540px,80svh,900px)]
           supports-[height:100dvh]:min-h-[clamp(540px,80dvh,900px)]
@@ -190,7 +188,7 @@ export default function Home() {
           </h2>
           <div
             className="
-              flex flex-col pt-9 md:w-[80%] mx-auto
+              flex flex-col pt-8 md:w-[80%] mx-auto
               space-y-8 supports-[gap:2rem]:space-y-0 supports-[gap:2rem]:gap-8
             "
           >

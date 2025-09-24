@@ -18,7 +18,7 @@ export default function TechStack({
   tech?: { name: string; icon: string }[];
 }) {
   return (
-    <article className="flex flex-row items-center py-4">
+    <article className="flex flex-row items-center py-3">
       <p className="text-md md:text-lg font-bold text-gray-800 w-full">{category}</p>
       <ul className="flex flex-row justify-end gap-2 md:gap-4">
         {tech.map((t) => (
