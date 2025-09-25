@@ -1,11 +1,21 @@
-*.css linguist-detectable=true
-*.mjs linguist-detectable=true
+# Count all relevant source files
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
 *.js linguist-detectable=true
+*.mjs linguist-detectable=true
+*.css linguist-detectable=true
 *.html linguist-detectable=true
+
+# Ignore generated or build outputs from stats
+.next/** linguist-vendored
+dist/** linguist-vendored
 src/types/* linguist-vendored
 generated/* linguist-generated
 
+
 * text=auto eol=lf
+package-lock.json text eol=lf
+
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -15,4 +25,3 @@ generated/* linguist-generated
 *.mp3 binary
 *.woff binary
 *.woff2 binary
-package-lock.json text eol=lf
